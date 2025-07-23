@@ -23,12 +23,13 @@ export default {
     methods: {
         startTimer() {
             this.timer = setInterval(() => {
-                this.reactionTime += 10
+                this.reactionTime += 5
             }, 10)
         },
         stopTimer() {
             clearInterval(this.timer)
-            console.log(`Reaction Time: ${this.reactionTime} ms`)
+            this.$emit('end', this.reactionTime)
+
         }
     }
 }
